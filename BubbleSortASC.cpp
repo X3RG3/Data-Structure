@@ -25,7 +25,7 @@ int main(){
 
     bubbleSort(arr,n);
 
-    cout<<"Sorted Array : "<<endl;
+    cout<<"Sorted Array Ascending : "<<endl;
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
