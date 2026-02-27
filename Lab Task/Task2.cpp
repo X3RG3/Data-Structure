@@ -1,37 +1,30 @@
 #include <iostream>
 using namespace std;
- 
-int binarySearch(int arr[], int n, int key) {
-    int low = 0;
-    int high = n - 1;
- 
-    while (low <= high) {
-        int mid = low + (high - low) / 2;
- 
-        if (arr[mid] == key)
-            return mid;          // element found
- 
-        else if (arr[mid] < key)
-            low = mid + 1;       // search right half
- 
-        else
-            high = mid - 1;      // search left half
+
+void selectionSort(int A[],int n){
+    int i,j,k,temp;
+    for(i=0;i<n-1;i++){
+        k = i;
+        for(j=i+1;j<n;j++){
+            if(A[j]<A[k]){
+                k = j;
+            }
+        }
+        temp = A[i];
+        A[i] = A[k];
+        A[k] = temp;
     }
- 
-    return -1;  // element not found
 }
- 
-int main() {
-    int arr[] = {10, 20, 25, 30, 50};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int key = 30;
- 
-    int result = binarySearch(arr, n, key);
- 
-    if (result != -1)
-        cout << "Element found at index: " << result<<endl;
-    else
-        cout << "Element not found";
- 
-    return 0;
+
+int main(){
+    int arr[] ={33,66,22,99,77,11,91};
+    int size = sizeof(arr)/sizeof(arr[0]);
+
+    selectionSort(arr,size);
+
+    cout<<"Sorted Array :  ";
+
+    for(int i=0;i<size;i++){
+        cout<<arr[i]<<" ";
+    }
 }
