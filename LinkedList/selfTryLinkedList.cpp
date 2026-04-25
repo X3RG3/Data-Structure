@@ -15,7 +15,7 @@ int main(){
     n2.next = NULL;
     n3.next = NULL;
     
-
+    // 10 20
     // Insert Value at last.....
 
     Node* head = &n1;
@@ -26,6 +26,7 @@ int main(){
     }
     temp->next = &n3;
 
+    // 10 20 30
 
     // Insert 50 after value 20....
     n4.data = 50;
@@ -43,6 +44,8 @@ int main(){
         n4.next = temp->next;
         temp->next = &n4;
     }
+
+    // 10 20 50 30
 
     // Insert Value before 20....
     Node* prev = NULL;
@@ -69,13 +72,14 @@ int main(){
         prev->next = &n5;
     }
 
+    // 10 15 20 50 30 
 
     // Printing all Linked list Values....
 
     temp = head;
 
     while (temp != NULL) {
-    printf("%d ", temp->data);
+    cout<<temp->data<<" ";
     temp = temp->next;
     }
 }
