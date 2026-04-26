@@ -71,11 +71,11 @@ void Delete(Node* head, int value){
         cout<<"NOT FOUND...!"<<endl;
         return;
     }
-    if(prev == NULL){
+    if(prev == NULL){  // Delete the Head
         head = temp->next;
         delete temp;
     }
-    else{
+    else{    // Delete other
         prev->next = temp->next;
         delete temp;
     }
