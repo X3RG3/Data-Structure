@@ -38,7 +38,7 @@ void insertAfterValue(Node* head,int value,Node* newNode){
     temp->next = newNode;
 }
 
-void insertBeforeValue(Node* head,int value,Node* newNode){
+void insertBeforeValue(Node* &head,int value,Node* newNode){
     Node* temp = head;
     Node* prev = NULL;
     while(temp!= NULL && temp->data != value){
@@ -60,7 +60,7 @@ void insertBeforeValue(Node* head,int value,Node* newNode){
 
 }
 
-void Delete(Node* head, int value){
+void Delete(Node* &head, int value){
     Node* temp = head;
     Node* prev = NULL;
     while(temp!= NULL && temp->data != value){
@@ -79,6 +79,21 @@ void Delete(Node* head, int value){
         prev->next = temp->next;
         delete temp;
     }
+}
+
+void update(Node* head, int oldVal, int newVal){
+    Node* temp = head;
+
+    while(temp != NULL && temp->data != oldVal){
+        temp = temp->next;
+    }
+
+    if(temp == NULL){
+        cout<<"NOT FOUND...!!"<<endl;
+        return;
+    }
+
+    temp->data = newVal;
 }
 
 
