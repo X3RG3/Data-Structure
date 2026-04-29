@@ -125,52 +125,5 @@ void update(Node* head, int oldVal, int newVal){
 }
 
 int main(){
-    Node* n1 = new Node();
-    Node* n2 = new Node();
-
-    n1->data = 10;
-    n2->data = 20;
-
-    n1->next = n2;
-    n1->prev = NULL;
-
-    n2->next = NULL;
-    n2->prev = n1;
-
-    Node* head = n1;
-
-    showElements(head);
-    cout<<endl;
-
-    Node* n3 = new Node();
-    n3->data = 30;
-    insertAtLast(head,n3);
-
-    showElements(head);
-    cout<<endl;
-
-    Node* n4 = new Node();
-    n4->data = 40;
-    insertAtLast(head,n4);
-
-    showElements(head);
-    cout<<endl;
-
-    Node* n5 = new Node();
-    n5->data = 50;
-    insertAfterValue(head,n3->data,n5);
-
-    showElements(head);
-    cout<<endl;
-
-    Node* n6 = new Node();
-    n6->data = 60;
-    insertBeforeValue(head,n4->data,n6);
-
-    showElements(head);
-    cout<<endl;
-
-    Delete(head,n6->data);
-
-    showElements(head);
+   
 }
